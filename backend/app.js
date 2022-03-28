@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+const employeeRoutes = require('./routes/employee')
+
 const Employee = require('./models/employee');
 
 const app = express();
@@ -22,5 +24,7 @@ mongoose.connect(process.env.DATABASE_URL)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+
+app.use('/api/employee', employeeRoutes);
 
 module.exports = app;

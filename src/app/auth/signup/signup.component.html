@@ -1,0 +1,20 @@
+<mat-card>
+  <form (submit)="onSignup(signinForm)" #signinForm="ngForm">
+    <mat-form-field>
+      <input matInput ngModel name="fullname" type="text" placeholder="Enter Full Name" #fullnameInput="ngModel" required />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput ngModel name="email" type="email" placeholder="Enter Email" #emailInput="ngModel" required email />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput ngModel name="roles" type="text" placeholder="Enter Roles At Job" #rolesInput="ngModel" required />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput ngModel name="username" type="text" placeholder="Enter Username" #usernameInput="ngModel" required />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput ngModel name="password" type="password" placeholder="Enter Password" #passwordInput="ngModel" required />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Signup</button>
+  </form>
+</mat-card>
