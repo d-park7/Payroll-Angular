@@ -24,10 +24,29 @@ router.post('/signup', (req, res) => {
         })
         .catch(err => {
           res.status(500).json({
-            error: err
+            error: err.message
           });
         });
     });
+    
 });
+
+router.get('/get', async (req, res) => {
+  try {
+    const employees = await Employee.find({});
+    res.json(employees);
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+
+router.get('/get/:id', async (req, res) => {
+  try {
+    const employee = await Employee.findById(req.params.id);
+    res.json(employee);
+  } catch (err) {
+    console.error(err.message);
+  }
+})
 
 module.exports = router;
